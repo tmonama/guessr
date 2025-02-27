@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Guessr! </title>
+        <link href="./Resources/guess.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <video autoplay muted loop id="my-video">
+            <source src="./Resources/Video/vid1.mp4" type="video/mp4">
+        </video>
+
+        <audio autoplay muted id="error">
+            <source src="./Resources/Audio/system-error-notice-132470.mp3" type="audio/mp3">
+        </audio>
+
+        <audio autoplay muted id="correct">
+            <source src="./Resources/Audio/correct-6033.mp3" type="audio/mp3">
+        </audio>
+
+        <audio autoplay muted id="incorrect">
+            <source src="./Resources/Audio/negative_beeps-6008.mp3" type="audio/mp3">
+        </audio>
+        
+        <header>
+            <h1> Guessr! </h1>
+        </header>
+
+        <main>
+            <div class="background">
+                <div class="game-title">
+                    <h2> Let's go! </h2>
+                </div>
+    
+                <div class="score-board">
+                    <div class="scores">
+                        <div class="right">
+                            <h4> Right </h4>
+                            <h5 id="right"></h5>
+                        </div>
+                        <div class="wrong">
+                            <h4> Wrong </h4>
+                            <h5 id="wrong"></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="game-stage">
+                    <h3 id="hidden-word"> _________ </h3>
+                    <h4 id="app-response"> Ready for guess </h4>
+                </div>
+    
+                <div class="user-interact">
+                    <div class="user-answer">
+                        <input id="user-input" type="text" placeholder="Enter letter guess or word guess." required>
+                        <button id="submit"> Submit </button>
+                    </div>
+                    <button id="new-game"> New Game </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="rights">
+                <h6>  All rights reserved  </h6>
+                <h6>  2025 Guessr. Privacy Policy </h6>
+            </div>
+        </footer>
+        <script type="module" src="./guess-game.js"></script>
+        <script type="module" src="./sound-effects.js"></script>
+    </body>
+</html>
