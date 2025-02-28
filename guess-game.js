@@ -140,9 +140,8 @@ function guessCheckLetter(guess, userScore, chosenWord, guesses) {
 }
 
 function guessCheckWord(guess, userScore, chosenWord) {
-    test1 = guess.toLowerCase();
-    test2 = chosenWord.toLowerCase();
-    string = ''
+    let test1 = guess.toLowerCase();
+    let test2 = chosenWord.toLowerCase();
     if (test1 === test2) {
         userScore.right ++;
         userScore.revealed = chosenWord;
