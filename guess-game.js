@@ -180,8 +180,11 @@ function reset(userScore, guesses, words) {
     document.getElementById("user-input").value = '';
     document.getElementById('app-response').innerHTML= "Ready for guess";
     chosenWord = chooseWord(words);
+    document.getElementById("user-input").disabled = false;
+    document.getElementById("submit").disabled = false;
     generateWord(chosenWord);
     displayScore(userScore);
+    
 }
 
 document.getElementById('submit').addEventListener('click', function() {
