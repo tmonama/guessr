@@ -12,6 +12,7 @@ function endResult(userScore, chosenWord) {
         document.getElementById('app-response').innerHTML= "You got it! Start a new game?";
         document.getElementById('app-response').style.backgroundImage = "linear-gradient(45deg, #08B3D1, #7EFF47)";
         document.getElementById("submit").disabled = true;
+        document.getElementById("user-input").disabled = true;
         
     }
 }
