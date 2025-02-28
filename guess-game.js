@@ -154,8 +154,8 @@ function guessCheckWord(guess, userScore, chosenWord) {
         userScore.right ++;
         userScore.revealed = chosenWord;
         document.getElementById('hidden-word').innerHTML= chosenWord;
-        correctSound();
         endResult(userScore, chosenWord);
+        rightSound();
         
     } else {
         document.getElementById('app-response').innerHTML= "Nah. Try again!";
