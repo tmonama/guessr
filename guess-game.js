@@ -7,11 +7,10 @@ let chosenWord = chooseWord(words);
 let guesses = [];
 let userScore = {"right": 0, "strike": 0, "revealed": ""};
 
-function endResult(userScore, chosenWord) {
-    if (userScore.revealed === chosenWord) {
-        document.getElementById('app-response').innerHTML= "You got it! Start a new game?";
-        document.getElementById("submit").disabled = true;
-    }
+function endResult() {
+    document.getElementById('app-response').innerHTML= "You got it! Start a new game?";
+    document.getElementById('app-response').style.backgroundImage = "linear-gradient(45deg, #08B3D1, #7EFF47)";
+    document.getElementById("submit").disabled = true;
 }
 
 function editRevealed (index, guess, revealed) {
@@ -137,6 +136,7 @@ function guessCheckLetter(guess, userScore, chosenWord, guesses) {
     } else {
         userScore.right ++;
         document.getElementById('app-response').innerHTML = "That's right!";
+        document.getElementById('app-response').style.backgroundImage = "linear-gradient(45deg, #08B3D1, #7EFF47)";
         document.getElementById('hidden-word').innerHTML = userScore.revealed;
         rightSound();
         endResult(userScore, chosenWord);
@@ -153,7 +153,7 @@ function guessCheckWord(guess, userScore, chosenWord) {
         userScore.revealed = chosenWord;
         document.getElementById('hidden-word').innerHTML= chosenWord;
         correctSound();
-        endResult(userScore, chosenWord);
+        endResult();
         
     } else {
         document.getElementById('app-response').innerHTML= "Nah. Try again!";
