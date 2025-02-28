@@ -81,6 +81,21 @@ main {
     text-decoration: underline;
 }
 
+.right h5,
+.wrong h5 {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.wrong h5 {
+    background: linear-gradient(45deg, #FF3131, #FF914D);
+}
+
+.right h5 {
+    background: linear-gradient(45deg, #08B3D1, #7EFF47);
+}
+
 .game-stage h3 {
     font-size: 1.5rem;
     margin-bottom: 50px;
