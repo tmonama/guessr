@@ -63,6 +63,7 @@ function guessValidate(chosenWord, userScore, guesses) {
         return guessCheck(guess, chosenWord, userScore, guesses);
     } else {
         document.getElementById('app-response').innerHTML= "Invalid answer. Make sure to type a letter or word.";
+        document.getElementById('app-response').style.background = "linear-gradient(45deg, #FF3131, #FF914D)";
         errorSound();
     }
 }
@@ -82,6 +83,7 @@ function guessCheckLetter(guess, userScore, chosenWord, guesses) {
             } else {
                 count ++;
                 document.getElementById('app-response').innerHTML = "You've already guessed that.";
+                document.getElementById('app-response').style.background = "linear-gradient(45deg, #CDFFD8, #94B9FF)";
                 errorSound();
             }
             guesses.push(guess);
@@ -89,6 +91,7 @@ function guessCheckLetter(guess, userScore, chosenWord, guesses) {
             if ((guesses.includes(guess))) {
                 count ++;
                 document.getElementById('app-response').innerHTML = "You've already guessed that.";
+                document.getElementById('app-response').style.background = "linear-gradient(45deg, #CDFFD8, #94B9FF)";
                 errorSound();
             }
         }
@@ -102,6 +105,7 @@ function guessCheckLetter(guess, userScore, chosenWord, guesses) {
             } else {
                 count ++;
                 document.getElementById('app-response').innerHTML = "You've already guessed that.";
+                document.getElementById('app-response').style.background = "linear-gradient(45deg, #CDFFD8, #94B9FF)";
                 errorSound();
             }
             guess = guess.toLowerCase();
@@ -109,6 +113,7 @@ function guessCheckLetter(guess, userScore, chosenWord, guesses) {
             if ((guesses.includes(guess))) {
                 count ++;
                 document.getElementById('app-response').innerHTML = "You've already guessed that.";
+                document.getElementById('app-response').style.background = "linear-gradient(45deg, #CDFFD8, #94B9FF)";
                 errorSound();
             }
         }
@@ -122,6 +127,7 @@ function guessCheckLetter(guess, userScore, chosenWord, guesses) {
     if (rightNow === userScore.right) {
         if (count === 0) {
             document.getElementById('app-response').innerHTML = "Wrong! Try again?";
+            document.getElementById('app-response').style.background = "linear-gradient(45deg, #FF3131, #FF914D)";
             userScore.strike ++; 
             document.getElementById('hidden-word').innerHTML = userScore.revealed;
             wrongSound();
@@ -140,9 +146,8 @@ function guessCheckLetter(guess, userScore, chosenWord, guesses) {
 }
 
 function guessCheckWord(guess, userScore, chosenWord) {
-    test1 = guess.toLowerCase();
-    test2 = chosenWord.toLowerCase();
-    string = ''
+    let test1 = guess.toLowerCase();
+    let test2 = chosenWord.toLowerCase();
     if (test1 === test2) {
         userScore.right ++;
         userScore.revealed = chosenWord;
@@ -152,6 +157,7 @@ function guessCheckWord(guess, userScore, chosenWord) {
         
     } else {
         document.getElementById('app-response').innerHTML= "Nah. Try again!";
+        document.getElementById('app-response').style.background = "linear-gradient(45deg, #FF3131, #FF914D)";
         if (!(guesses.includes(guess))) {
             userScore.strike ++;
             wrongSound();
