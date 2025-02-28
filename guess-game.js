@@ -12,6 +12,7 @@ function endResult(userScore, chosenWord) {
         document.getElementById('app-response').innerHTML= "You got it! Start a new game?";
         document.getElementById('app-response').style.backgroundImage = "linear-gradient(45deg, #08B3D1, #7EFF47)";
         document.getElementById("submit").disabled = true;
+        
     }
 }
 
@@ -187,7 +188,7 @@ document.getElementById('submit').addEventListener('click', function() {
   });
 
 document.addEventListener('keydown', function(e) {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && userScore.revealed != chosenWord) {
         guessValidate(chosenWord, userScore, guesses);
     }
   });
