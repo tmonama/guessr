@@ -12,33 +12,28 @@ body {
     justify-content: center;
     width: 100%;
     margin: 0;
-}
-
-#my-video {
-    width: 100vw;
-   height: 100vh;
-   object-fit: cover;
-   position: fixed;
-   left: 0;
-   right: 0;
-   top: 0;
-   bottom: 0;
-   z-index: -1;
+    background-color: #17171E;
 }
 
 header {
     grid-column: 1/ span 12;
     grid-row: 1/span 1;
-    background-color: #8c52ffc5;
+    background-color: #17171E;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: .5px .5px 2px black;
 }
 
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
     color: white;
+    background: linear-gradient(45deg, #FF66C4, #FFDE59);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     
 }
 
@@ -49,16 +44,18 @@ main {
     flex-direction: column;
     align-content: center;
     text-align: center;
-    padding: 100px 0;
-    margin-top: 30px;
+    margin-top: 50px;
     color: white;
+    padding: 5px;
+    background: linear-gradient(45deg, #FF66C4, #FFDE59); /* Gradient border */
+    border-radius: 25px; /* Curved border */
+    box-shadow: 5p 5px 5px #17171E;
 }
 
 .background {
-    background-color: #3c5d7f91;
-    padding-bottom: 30px;
-    border-radius: 20px;
-    box-shadow: 2px 1px 4px black;
+    background-color: #17171E; /* Background of the inner content */
+    border-radius: 20px; /* Curved corners for content */
+    height: 100%;
 }
 
 .game-title h2 {
@@ -92,8 +89,12 @@ main {
 
 .game-stage h4 {
     font-size: 1.2rem;
+    font-weight: bold;
     margin-bottom: 100px;
-    color: rgb(0, 216, 0);
+    background: linear-gradient(45deg, #08B3D1, #7EFF47);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .user-answer {
@@ -112,42 +113,43 @@ main {
 }
 
 .user-interact button {
+    color: white;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px black;
+}
+
+#submit {
     width: 80px;
     height: 30px;
-    background-color: orange;
-    color: white;
-    border: 1px solid rgb(255, 163, 34);
-    border-radius: 5px;
-    box-shadow: 1px 1px 2px black;
+    transition: background-image 0.3s ease;
+    background: linear-gradient(45deg, #FF66C4, #FFDE59);
+}
+
+#submit:hover {
+    background-image: linear-gradient(45deg, #FFDE59, #FF66C4); /* Reverse gradient on hover */
+    border: 2px solid rgb(0, 0, 0);
 }
 
 #new-game {
     width: 100px;
     height: 40px;
-    background-color: blueviolet;
-    border: 1px solid rgb(113, 36, 175);
-}
-
-.user-interact input:hover {
-    border: 1.5px solid rgb(68, 68, 68);
-}
-
-.user-interact button:hover {
-    background-color: rgb(252, 108, 6);
-    border: 1px solid rgb(185, 81, 1);
+    transition: background-image 0.3s ease;
+    background: linear-gradient(45deg, #681DFD, #FF914D);
 }
 
 #new-game:hover {
-    background-color: rgb(88, 0, 171);
-    border: 1px solid rgb(68, 0, 124);
+    background-image: linear-gradient(45deg, #FF914D, #681DFD);
 }
 
 footer {
     grid-column: 1/ span 12;
     grid-row: 10/span 1;
-    background-color: #8c52ffc5;
+    background-color: #17171E;
     display: flex;
     align-items: end;
+    box-shadow: .5px .5px 2px black;
 }
 
 .rights {
